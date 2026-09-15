@@ -180,6 +180,27 @@ await client.sendQuiz(jid, 'Correct answer?', ['1', '2', '3'], /* correctIndex *
 These are handled internally by the `Socket/luxu.js` helper and are invoked automatically
 by `sendMessage` or `relayMessage` whenever the payload contains one of the fields below.
 
+### Rich Menu
+
+`richMenu` sends a rich response with an optional header image, action buttons, carousel cards, and an open-URL footer:
+
+```js
+await client.richMenu(jid, {
+  header: {
+    title: 'Menu',
+    image: { url: 'https://example.com/banner.png' }
+  },
+  body: {
+    title: 'Choose an option',
+    buttons: ['Profile', 'Help']
+  },
+  footer: {
+    text: 'Open website',
+    url: 'https://example.com'
+  }
+})
+```
+
 ```js
 // Product message (catalog)
 await client.relayMessage(jid, {
