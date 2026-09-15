@@ -1,18 +1,11 @@
 <div align="center">
 
-# @xrelly/xbailz
+# @Xrelly-stack/xbailz
 
 A WebSocket-based library for interacting with WhatsApp Web — a fork of
 [Baileys](https://github.com/WhiskeySockets/Baileys) with additional socket layers
 (Communities, Interop, Privacy, GraphQL) and helpers for special message types
 such as payments, products, albums, events, poll results, and order messages.
-
-[![npm version](https://img.shields.io/npm/v/@xrelly/xbailz.svg)](https://www.npmjs.com/package/@xrelly/xbailz)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Downloads](https://img.shields.io/npm/dm/@xrelly/xbailz.svg)](https://www.npmjs.com/package/@xrelly/xbailz)
-[![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](package.json)
-
-[Donation](https://www.zeppeli.my.id) · [API Reference](docs/API.md)
 
 </div>
 
@@ -50,7 +43,7 @@ such as payments, products, albums, events, poll results, and order messages.
 ## Installation
 
 ```bash
-npm install @xrelly/xbailz
+npm install @Xrelly-stack/xbailz
 ```
 
 You can also add it to your package manifest as `baileys` or `@whiskeysockets/baileys`:
@@ -58,15 +51,15 @@ You can also add it to your package manifest as `baileys` or `@whiskeysockets/ba
 ```json
 {
   "dependencies": {
-    "@xrelly/xbailz": "github:Xrelly/wbails"
+    "@whiskeysocket/baileys": "github:Xrelly-stack/xbailz"
   }
 }
 ```
 
 ```js
-import makeWASocket from '@xrelly/xbailz'
+import makeWASocket from '@whiskeysocket/baileys'
 // or with CommonJS:
-const { default: makeWASocket } = require('@xrelly/xbailz')
+const { default: makeWASocket } = require('@whiskeysocket/baileys')
 ```
 
 ## Quick Start
@@ -74,7 +67,7 @@ const { default: makeWASocket } = require('@xrelly/xbailz')
 ### Login with QR Code
 
 ```js
-import makeWASocket, { Browsers, useMultiFileAuthState } from '@xrelly/xbailz'
+import makeWASocket, { Browsers, useMultiFileAuthState } from '@whiskeysocket/baileys'
 
 const { state, saveCreds } = await useMultiFileAuthState('auth_info')
 
@@ -90,7 +83,7 @@ client.ev.on('creds.update', saveCreds)
 ### Login with Pairing Code
 
 ```js
-import makeWASocket, { Browsers, fetchLatestWAWebVersion, useMultiFileAuthState } from '@xrelly/xbailz'
+import makeWASocket, { Browsers, fetchLatestWAWebVersion, useMultiFileAuthState } from '@whiskeysocket/baileys'
 
 const { state, saveCreds } = await useMultiFileAuthState('auth_info')
 const { version } = await fetchLatestWAWebVersion()
@@ -119,7 +112,7 @@ if (!client.authState?.creds?.registered) {
 which Baileys does not persist automatically by default.
 
 ```js
-import makeWASocket, { makeInMemoryStore } from '@xrelly/xbailz'
+import makeWASocket, { makeInMemoryStore } from '@whiskeysocket/baileys'
 import pino from 'pino'
 
 const store = makeInMemoryStore({
@@ -282,12 +275,6 @@ Ready-to-run examples are available in [examples/](examples):
 - **`optionHash` for per-option image polls** is not implemented — it appears to require further reverse-engineering at the WhatsApp APK level.
 - See the [API Reference](docs/API.md#️-important-notes) for additional technical notes.
 
-## Community Channels
-
-- **Telegram channel**: [D'synC](https://t.me/dasynch)
-- **Telegram group**: [D'synC Discussion](https://t.me/+Jgm1bf5oeoM2Mjdh)
-- **Credit**: [Van Snowi](https://t.me/TheSatanicMirror)
-
 ## Contributing
 
 Issues and pull requests are welcome. Before submitting a PR, please run:
@@ -296,32 +283,3 @@ Issues and pull requests are welcome. Before submitting a PR, please run:
 npm run lint
 npm test
 ```
-
-## Contributors
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/Xrelly">
-        <img src="https://github.com/Xrelly.png" width="80px;" style="border-radius:50%;" alt="Main contributor"/>
-        <br /><sub><b>xrelly</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/vansnowi">
-        <img src="https://github.com/vansnowi.png" width="80px;" style="border-radius:50%;" alt="Contributor"/>
-        <br /><sub><b>TsM Snøwi</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Xcoursed">
-        <img src="https://github.com/Xcoursed.png" width="80px;" style="border-radius:50%;" alt="Contributor"/>
-        <br /><sub><b>Xcoursed</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-## License
-
-[MIT](LICENSE)
